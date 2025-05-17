@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Webinars - AgriLearn</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!-- Same Navbar -->
+		<!-- Update Navbar in all pages -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">AgriLearn</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item"><a class="nav-link smooth-scroll" href="index">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+						<li class="nav-item"><a class="nav-link" href="webinars.html">Webinars</a></li>
+						<li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+						<li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+						<li class="nav-item"><a class="nav-link" href="login.html" id="loginLink">Login</a></li>
+						<li class="nav-item"><a class="nav-link" href="signup.html" id="signupLink">Sign Up</a></li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal"> Cart (<span id="cartCount">0</span>) </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Add Cart Modal to all pages (below main content, before footer) -->
+		<div class="modal fade" id="cartModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-success text-white">
+						<h5 class="modal-title">Your Cart</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+					<div class="modal-body">
+						<div id="cartItems"></div>
+						<p class="mt-3">Total: $<span id="cartTotal">0.00</span></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+						<button type="button" class="btn btn-success" id="checkout">Checkout</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Same Sidebar -->
+		<div class="sidebar bg-light">
+			<!-- Same as before -->
+		</div>
+
+		<div class="main-content">
+			<!-- Webinars Header -->
+			<section class="container mt-5 pt-5">
+				<h1 class="text-center mb-4">Live Webinars & Workshops</h1>
+				<div class="row mb-4">
+					<div class="col-md-4">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search webinars..." id="webinarSearch" />
+							<button class="btn btn-success" type="button">Search</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<select class="form-select" id="dateFilter">
+							<option value="">Filter by date</option>
+							<option value="week">This Week</option>
+							<option value="month">This Month</option>
+							<option value="all">All Upcoming</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<select class="form-select" id="categoryFilter">
+							<option value="">Filter by category</option>
+							<option value="crop">Crop Management</option>
+							<option value="soil">Soil Health</option>
+							<option value="tech">Farm Technology</option>
+						</select>
+					</div>
+				</div>
+			</section>
+
+			<!-- Featured Webinar -->
+			<section class="container my-5">
+				<h2 class="mb-3">Featured Webinar</h2>
+				<div class="card bg-light">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img
+								src="https://images.pexels.com/photos/17903072/pexels-photo-17903072/free-photo-of-man-watering-a-vegetable-garden-using-a-hose.jpeg?auto=compress&cs=tinysrgb&w=600"
+								class="img-fluid rounded-start"
+								alt="Featured Webinar"
+							/>
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h3 class="card-title">Advanced Irrigation Techniques</h3>
+								<p class="card-text">Join Dr. Maria Gonzalez to learn cutting-edge irrigation methods</p>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">Date: March 5, 2025</li>
+									<li class="list-group-item">Time: 3:00 PM EST</li>
+									<li class="list-group-item">Duration: 90 minutes</li>
+									<li class="list-group-item">Level: Intermediate</li>
+								</ul>
+								<div class="mt-3">
+									<span class="badge bg-success me-2">$29</span>
+									<span class="badge bg-info">Live Q&A</span>
+								</div>
+								<div class="mt-3">
+									<button class="btn btn-success me-2">Register Now</button>
+									<button class="btn btn-outline-primary me-2">Add to Calendar</button>
+									<button class="btn btn-outline-secondary">View Related <a href="videos.html">Videos</a></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Upcoming Webinars -->
+			<section class="container my-5">
+				<h2 class="mb-3">Upcoming Webinars</h2>
+				<div class="row">
+					<div class="col-md-6 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Soil Fertility Basics</h5>
+								<p class="card-text">With Prof. John Lee</p>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">Date: March 10, 2025</li>
+									<li class="list-group-item">Time: 1:00 PM EST</li>
+								</ul>
+								<div class="mt-3">
+									<span class="badge bg-success">Free</span>
+								</div>
+								<div class="mt-3">
+									<button class="btn btn-success">Register</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Add more webinar cards -->
+				</div>
+			</section>
+
+			<!-- Past Webinars -->
+			<section class="container my-5">
+				<h2 class="mb-3">Past Webinars (Recordings)</h2>
+				<div class="row">
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Crop Rotation Strategies</h5>
+								<p class="card-text">Recorded Feb 15, 2025</p>
+								<div class="mt-3">
+									<button class="btn btn-success">Watch ($19)</button>
+									<a href="courses.html" class="btn btn-outline-primary mt-2">Related Course</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Add more past webinar cards -->
+				</div>
+			</section>
+
+			<!-- Webinar FAQ -->
+			<section class="container my-5">
+				<h2 class="mb-3">Webinar FAQ</h2>
+				<div class="accordion" id="webinarFAQ">
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I join a webinar?</button>
+						</h2>
+						<div id="faq1" class="accordion-collapse collapse" data-bs-parent="#webinarFAQ">
+							<div class="accordion-body">Register and you'll receive a link via email. <a href="login.html">Login</a> required.</div>
+						</div>
+					</div>
+					<!-- Add more FAQ items -->
+				</div>
+			</section>
+		</div>
+
+		<!-- Same Footer -->
+		<footer class="bg-success text-white py-4" id="contact">
+			<!-- Same as before -->
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
