@@ -1,71 +1,100 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    background-color: #f8f9fa;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	scroll-behavior: smooth;
+	background-color: #f8f9fa;
 }
 
 .carousel-item img {
-    height: 600px;
-    object-fit: cover;
+	height: 650px;
+	object-fit: cover;
 }
 
 .card {
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
+	transition: transform 0.3s, box-shadow 0.3s;
+	border: none;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 section {
-    padding: 60px 0;
+	padding: 30px 0 20px;
 }
 
 .badge {
-    font-size: 0.9em;
+	font-size: 0.9em;
 }
 
 footer {
-    position: relative;
+	position: relative;
 }
 
 .video-card .ratio {
-    background: #000;
+	background: #000;
 }
 
 .list-group-item-action:hover {
-    background-color: #e9ecef;
+	background-color: #e9ecef;
 }
 
 .btn {
-    transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 /* Previous styles remain */
 
 .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #dee2e6;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-bottom: 1px solid #dee2e6;
 }
 
 .cart-item button {
-    font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .bi-check-circle-fill {
-    font-size: 4rem;
+	font-size: 4rem;
+}
+
+.carousel-caption {
+	position: absolute;
+	right: 15%;
+	bottom: 10.25rem !important;
+	left: 15%;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	color: #fff;
+	text-align: center;
+}
+
+.nav-link {
+	display: block;
+	padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+	font-size: var(--bs-nav-link-font-size);
+	font-weight: var(--bs-nav-link-font-weight);
+	color: var(--bs-nav-link-color);
+	text-decoration: none;
+	background: 0 0;
+	border: 0;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.nav-link:hover {
+	text-decoration: underline;
+	font-weight: bold;
+	color: #fff;
 }
