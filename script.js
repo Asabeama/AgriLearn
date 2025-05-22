@@ -23,19 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	// Enhanced Login
-	document.getElementById("loginForm")?.addEventListener("submit", function (e) {
-		e.preventDefault();
-		const email = document.getElementById("email").value;
-		const password = document.getElementById("password").value;
-		if (email && password.length >= 8) {
-			localStorage.setItem("isLoggedIn", "true");
-			localStorage.setItem("userEmail", email);
-			alert("Login successful! Welcome back to AgriLearn.");
-			window.location.href = "index.html";
-		} else {
-			alert("Please enter valid credentials (password 8+ characters)");
-		}
-	});
+	// document.getElementById("loginForm")?.addEventListener("submit", function (e) {
+	// 	e.preventDefault();
+	// 	const email = document.getElementById("email").value;
+	// 	const password = document.getElementById("password").value;
+	// 	if (email && password.length >= 8) {
+	// 		localStorage.setItem("isLoggedIn", "true");
+	// 		localStorage.setItem("userEmail", email);
+	// 		alert("Login successful! Welcome back to AgriLearn.");
+	// 		window.location.href = "index.html";
+	// 	} else {
+	// 		alert("Please enter valid credentials (password 8+ characters)");
+	// 	}
+	// });
 
 	// Password Reset
 	document.getElementById("resetForm")?.addEventListener("submit", function (e) {
@@ -47,30 +47,30 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
-	// Enhanced Signup
-	document.getElementById("signupForm")?.addEventListener("submit", function (e) {
-		e.preventDefault();
-		const email = document.getElementById("signupEmail").value;
-		const password = document.getElementById("signupPassword").value;
-		const confirmPassword = document.getElementById("confirmPassword").value;
-		const userType = document.getElementById("userType").value;
-		const farmSize = document.getElementById("farmSize").value;
+	// // Enhanced Signup
+	// document.getElementById("signupForm")?.addEventListener("submit", function (e) {
+	// 	e.preventDefault();
+	// 	const email = document.getElementById("signupEmail").value;
+	// 	const password = document.getElementById("signupPassword").value;
+	// 	const confirmPassword = document.getElementById("confirmPassword").value;
+	// 	const userType = document.getElementById("userType").value;
+	//     const farmSize = document.getElementById("farmSize").value;
 
-		if (password !== confirmPassword) {
-			alert("Passwords do not match");
-			return;
-		}
-		if (email && password.length >= 8 && userType) {
-			localStorage.setItem("isLoggedIn", "true");
-			localStorage.setItem("userEmail", email);
-			localStorage.setItem("userType", userType);
-			if (farmSize) localStorage.setItem("farmSize", farmSize);
-			alert(email);
-			window.location.href = "index.html";
-		} else {
-			alert("Please complete all required fields correctly");
-		}
-	});
+	// 	if (password !== confirmPassword) {
+	// 		alert("Passwords do not match");
+	// 		return;
+	// 	}
+	// 	if (email && password.length >= 8 && userType) {
+	// 		localStorage.setItem("isLoggedIn", "true");
+	// 		localStorage.setItem("userEmail", email);
+	// 		localStorage.setItem("userType", userType);
+	// 		if (farmSize) localStorage.setItem("farmSize", farmSize);
+	// 		alert(email);
+	// 		window.location.href = "index.html";
+	// 	} else {
+	// 		alert("Please complete all required fields correctly");
+	// 	}
+	// });
 
 	// Webinar Filters
 	const webinarSearch = document.getElementById("webinarSearch");
@@ -254,5 +254,24 @@ document.addEventListener("DOMContentLoaded", function () {
 			this.className += " active";
 		});
 	}
+
+	var accessToken = localStorage.getItem("accessToken");
+	if (accessToken === null) {
+		//Hide the links
+		document.getElementById("logoutButton").style.display = "none";
+	} else {
+		//Hide the logout button
+		document.getElementById("signupLink").style.display = "none";
+		document.getElementById("loginLink").style.display = "none";
+	}
+
+	//Handle user logout
+	document.getElementById("logoutButton")?.addEventListener("click", () => {
+		localStorage.removeItem("accessToken");
+		localStorage.removeItem("userId");
+		localStorage.removeItem("userName");
+		localStorage.removeItem("email");
+		alert("user signed out successfully");
+		window.location.reload();
+	});
 });
-// Previous webinar, video, login, signup functionality remains
